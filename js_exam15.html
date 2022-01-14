@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>DOM</h1>
+    <!-- (div#box$+hr)*3 -->
+    <div id="box1">
+        <!-- h2+(ul>li{목록}*3)+(ol>li{목록}*3) -->
+        <h2>box1</h2>
+        <ul>
+            <li>목록</li>
+            <li>목록</li>
+            <li>목록</li>
+        </ul>
+        <ol>
+            <li>목록</li>
+            <li>목록</li>
+            <li>목록</li>
+        </ol>
+    </div>
+    <hr>
+    <div id="box2">
+        <!-- h2{box2}+(p.pBox{문단$})*3 -->
+        <h2>box2</h2>
+        <p class="pBox">문단1</p>
+        <p class="pBox">문단2</p>
+        <p class="pBox">문단3</p>
+        <div class="pBox">div contents</div>
+    </div>
+    <hr>
+    <div id="box3"></div>
+    <hr>
+
+
+    <!-- 외부 js 파일 연결 -->
+    <script src="js_exam15.js"></script>
+</body>
+</html>

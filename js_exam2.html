@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS2-변수, 기본 자료형, 연산자</title>
+</head>
+<body>
+    <h1>JS2-변수, 기본 자료형, 연산자</h1>
+    <script>
+        // 변수(Variable)
+        // var 변수명;
+        // var 변수명1=값, 변수명2=값2;
+        var num1;
+        var num2 = 100;
+        var num3 = 100;
+        var text1 = "Hello world";
+            text2 = "Hello Js";
+
+        console.log(num1);
+        console.log(num2);
+        console.log(text1);
+        console.log(text2);
+        console.log("num1 = ", num1);
+        console.log("num2 = ", num2);
+        document.write("<p> text=1 " + text1 + "</p>");
+        document.write("<p> text=2 " + text2 + "</p>");
+        
+        // Escape 문자 -console.log(), alert()에서 사용
+        /*
+        \n, 줄바꿈
+        \t, 공백 
+        \'   홑따움표 출력
+        \"  쌍따움표 출력
+        \/  / 출력
+        */
+       console.log("Hello \n\t\t\t\t\t world");
+        // 쌍따움표안에 같은 쌍따움표는 사용 불가
+       console.log("철수야 \"영희야\"");
+       console.log(" HTML \/ CSS \/ JS ");
+
+       /*
+       //기본 데이터형
+
+
+       typeof(변수나 값) : 자료형 표시 함수
+       */
+      var v1 = 100;
+      var v2 = 3.14;
+      var v3 = true;
+      var v4 = "Hello";
+      console.log(v1, typeof(v1));
+      console.log(v2, typeof(v2));
+      console.log(v3, typeof(v3));
+      console.log(v4, typeof(v4));
+      
+      /*
+        캐스팅(casting) : 자료형 변환
+        - 자동 형변환
+            숫자+문자 -> 문자
+            논리형<정수형<실수형<문자열 형
+        */
+        console.log("\n\n");
+        console.log(v1+v2, typeof(v1+v2));  // 정수 + 실수 --> 실수
+        console.log(v1+v3, typeof(v1+v3));  // 정수 + 논리형 --> 정수
+        var v3 = false;
+        console.log(v1+v3, typeof(v1+v3));  // true = 1, false = 0 값 가짐
+        console.log(v1+v4, typeof(v1+v4));  // 정수 + 문자열 --> 문자열
+        
+        // 강제적 형변환
+        // String(변수/ 데이터) : 문자열 데이터로 변경
+        // Number(변수) : 숫자형 데이터로 변경
+
+        var n = 100;
+
+        // 숫자 아닌 문자열 --> 숫자형으로 캐스팅하면 NaN
+        var s1 = "200";
+        var s2 = "true";
+        var s3 = "Hello world";
+        var b1 = true;
+        var b2 = false;
+        console.log("\n\n");
+        console.log(" n = ",n, typeof(n));
+        console.log("s1 = ",s1, typeof(s1));
+        var nn = String(n);
+        console.log("nn =", nn, typeof(nn));
+        var ss1 = Number(s1);
+        var ss2 = Number(s2);
+        var ss3 = Number(s3);
+
+        console.log(" ss1 = ", ss1, typeof(ss1));
+        console.log(" ss2 = ", ss2, typeof(ss2));
+        console.log(" ss3 = ", ss3, typeof(ss3));
+        console.log("\n\n");
+
+        var bb1 = Number(b1);
+        console.log(" bb1 = ", bb1, typeof(bb1));
+        var bb1 = String(b1);
+        console.log(" bb1 = ", bb1, typeof(bb1));
+
+        var bb2 = Number(b2);
+        console.log(" bb2 = ", bb2, typeof(bb2));
+        var bb2 = String(b2);
+        console.log(" bb2 = ", bb2, typeof(bb2));
+
+        
+
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>

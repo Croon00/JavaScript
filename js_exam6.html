@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <!-- 다중 if 문 -->
+
+    <script>
+        var n = 100;
+        if (n>0){
+            console.log(n, "=> 양수");
+        } else if (n == 0){
+            console.log(n);
+        } else {
+            (n, " =>음수 ");
+        }
+        
+        age = Number(prompt("나이를 입력하세요"))
+        if (age > 0 && age < 8){
+            console.log("유아");
+        } 
+        else if(age > 7 && age < 14){
+            console.log("초딩");
+
+        }
+        else if(age > 13 && age < 17){
+            console.log("중딩");
+
+        }
+        else if(age > 16 && age < 20){
+            console.log("고딩");
+
+        }
+        else if(age > 20){
+            console.log("성인");
+
+        }
+        else{
+            console.log("잘못 입력");
+
+        }
+        switch (n % 2) {
+            case 0:
+                console.log("짝수이다.");
+                break;
+            case 1:
+                console.log("홀수이다.");
+                break;
+            
+            default:
+                console.log("그 외");
+        }
+        
+        var m = Number(prompt("몇 월 입니까?"))
+        switch (m) {
+            case 3:
+            case 4:              
+            case 5:
+                console.log("봄");
+                break;
+            case 6:
+            case 7:              
+            case 8:
+                console.log("여름");
+                break;
+            case 9:
+            case 10:              
+            case 11:
+                console.log("가을");
+                break;
+            case 12:
+            case 1:              
+            case 2:
+                console.log("겨울");
+                break;
+            defaul:
+        }
+    </script>
+
+
+
+
+
+
+    
+</body>
+</html>

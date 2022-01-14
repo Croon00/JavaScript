@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 퀴즈</title>
+</head>
+<body>
+    <h1>JS 퀴즈</h1>
+    <script>
+        // 퀴즈1 : 국어, 영어, 수학 점수를 입력받은 후
+        // 세과목의 평균이 80점이 넘으면 합격 그렇지 않으면
+        // 불합격 메세지를 출력하라.
+        ko = Number(prompt("국어 점수를 입력하시오:"));
+        en = Number(prompt("영어 점수를 입력하시오:"));
+        mt = Number(prompt("수학 점수를 입력하시오:"));
+
+        avg = Number((ko + en + mt)/3);
+        if(avg > 80) {
+            console.log("합격");
+        }
+        else{
+            console.log("불합격");
+        }
+
+        // 퀴즈2 :
+        time = Number(prompt("시간을 입력하시오"));
+        if((1<=time)&&(time<=12)){
+            console.log("오전");
+        }
+        else{
+            console.log("오후");
+        }
+
+        // 퀴즈 3:
+        id = prompt("아이디를 입력하시오:");
+        pw = prompt("비밀번호를 입력하시오");
+
+        if((id == "cosmos")&&(pw == 1234)){
+            console.log("로그인 성공입니다.")
+        }
+
+        
+        
+    </script>
+    
+</body>
+</html>

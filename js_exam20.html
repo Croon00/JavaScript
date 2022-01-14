@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js 퀴즈</title>
+</head>
+<body>
+    <div id="quiz1">
+        <p><input type="text" id="kor" placeholder="국어"></p>
+        <p><input type="text" id="eng" placeholder="영어"></p>
+        <p><input type="text" id="math" placeholder="수학"></p>
+        <button>결과확인</button>
+    </div>
+    <div id="result1"></div>
+
+    <script>
+    // 퀴즈 1 : 국어, 영어, 수학 점수를 텍스트필드에 입력받아 
+    // 총점과 평균을 출력하여라.
+
+    // 노드.on이벤트 = function(){
+    // 명령문
+    // };
+    // var btn = document.querySelector("#quiz1 button");
+    // var btn = document.getElementsByTagName('button')[0]; 배열로 들어옴
+    // var btn = document.getElementById();
+    var btn = document.querySelector("#quiz1 button");
+    console.log(btn);
+    btn.addEventListener('click', function(){
+        console.log('클릭 테스트');
+        var kor = document.querySelector('#kor');
+        var eng = document.querySelector('#eng');
+        var math = document.querySelector('#math');
+        console.log(kor);
+        console.log(eng);
+        console.log(math);
+
+        var total = Number(kor.value) + Number(eng.value) + Number(math.value);
+        console.log(total, (total/3).toFixed(3));
+        // 출력창에 출력하기
+        var result = document.querySelector("#result1");
+        result.innerHTML = "총점 => " + total + "평균 => " + (total/3).toFixed(3);
+
+    });
+    </script>
+    
+</body>
+
+</html>

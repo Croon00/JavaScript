@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event</title>
+</head>
+
+<body>
+  <div id="box1">
+    <button>alert1-1</button>
+    <button>alert1-2</button>
+  </div>
+  <div id="box2">
+    <button>alert2-1</button>
+    <button>alert2-2</button>
+  </div>
+  <hr>
+  <div id="box3">
+    <input type="text" placeholder="숫자 입력">
+    <button>click</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    // adding Event - 익명함수 
+    /*
+    var  노드변수 = 노드접근함수이용
+    노드변수.이벤트 = function() {
+       명령문
+    };
+    */
+
+    // #box1>button 클릭시 경고상자 발생 
+    // button 노드 접근 => 배열
+    var buttonNode = document.querySelectorAll('#box1 button');
+    console.log('버튼 리스트', buttonNode); // [button, button]
+    console.log('첫번째버튼', buttonNode[0]); // <button>alert1</button>
+    console.log('두번째버튼', buttonNode[1]);  // <button>alert2</button>
+
+    // 이벤트 추가 
+    buttonNode[0].onclick = function () {
+      alert('경고상자1-1');
+    };
+    buttonNode[1].onclick = function () {
+      alert('경고상자1-2');
+    };
+
+
+    // addEventListener - 익명함수 
+    /*
+    var  노드변수 = 노드접근함수이용
+    노드변수.addEventListener(event, 함수또는 콜백함수)
+    */
+    var buttonNode2 = document.querySelectorAll('#box2 button');
+    buttonNode2[0].addEventListener('click', function () {
+      console.log('click 2-1');
+    })
+
+    function eventHandler() {
+      console.log('click 2-2');
+    }
+    buttonNode2[1].addEventListener('click', eventHandler)
+
+    // 입력값에 따른 구구단 출력하기 
+    var target = document.querySelector('#box3 button');
+    console.log(target);
+    target.addEventListener('click', function () {
+      // value 값을 저장 
+      var n = document.querySelector('#box3 input').value;
+      console.log(n);
+      var result = document.querySelector('#result');
+      result.innerHTML = '';
+      if (n != 0) {
+        for (var i = 1; i <= 9; i++) {
+          result.innerHTML += n + " X " + i + " = " + n * i + "<br>";
+        }
+      }
+
+    });
+
+    // 퀴즈 1 : 국어, 영어, 수학 점수를 텍스트필드에 입력받아 총점과 평균을 출력하여라 
+
+    // 퀴즈 2 : 태어난 년도를 텍스트필드로 입력받아 띠를 출력하여라. 
+    // 태어난년도%12 = 숫자 (0~11)
+    // 원숭이, 닭, 개, 돼지, 쥐, 소, 범, 토끼, 용, 뱀, 말, 양 
+
+    // 퀴즈3 : 폼버튼을 이용하여 계산기를 구현하여라. 
+
+  </script>
+
+  <div id="calculator" style="margin-top:30px">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button><br>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button><br>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button><br>
+    <button>0</button><br>
+    <button>+</button>
+    <button>-</button>
+    <button>*</button>
+    <button>/</button>
+  </div>
+  <button id="resultBtn">결과</button>
+  <button id="clearBtn">초기화</button>
+  <div id="box"></div>
+
+  <script>
+    var target = document.querySelectorAll('#calculator button');
+    // target[0].addEventListener('click', function() {
+    //   document.getElementById('box').innerHTML += this.innerHTML;
+    // });
+    for (var i=0; i<target.length; i++) {
+      target[i].addEventListener('click', function() {
+        document.getElementById('box').innerHTML += this.innerHTML;
+      });
+    }
+    var btn = document.querySelector('#resultBtn');
+    btn.addEventListener('click', function() {
+      var exp = document.getElementById('box').innerHTML;
+      document.getElementById('box').innerHTML = eval(exp);
+    })
+
+    var btn2 = document.querySelector('#clearBtn');
+    btn2.addEventListener('click', function() {
+      document.getElementById('box').innerHTML = '';
+    });
+  </script>
+
+
+</body>
+
+</html>

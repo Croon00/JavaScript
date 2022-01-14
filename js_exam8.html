@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For문</title>
+</head>
+<body>
+    <script>
+        /*
+        for (초기치;조건;증강){
+            명령문
+        }
+
+        */
+       for(var i = 1; i<=10; i++) {
+           console.log(i);
+       }
+       console.log("==========================");
+
+       for(var i = 10; i > 0; i--) {
+           console.log(i);
+       }
+       console.log("==========================");
+
+
+       var total = 0;
+       for(var i = 1; i<=100; i++){
+           console.log(i);
+           if (i%5 == 0){
+               total += i;
+           }
+       }
+       console.log("5 + 10 + 15... + 100", total)
+
+       for (i = 2; i <= 9; i++) {
+           document.write(" <h2> " + i + "단 </h2>");
+           document.write("<ul>");
+           for (j = 1; j <= 9; j++){
+            document.write(" <li> " + i + " X " + j + " = " + (i*j) + "</li>");
+            }
+            document.write("</ul>");
+            document.write("<hr>");
+       }
+
+       for (var i=1; i<=5; i++) {
+           document.write("<p>")
+           for (j=1; j<=7; j++) {
+               document.write(" * ");
+
+           }
+           document.write("<br>");
+       }
+       document.write("</p>");
+
+       for (var i=1; i<=5; i++) {
+           document.write("<p>")
+           for (j=1; j<=i; j++) {
+               document.write(" * ");
+
+           }
+           document.write("<br>");
+       }
+       document.write("</p>");
+
+       for (var i=1; i<=5; i++) {
+           document.write("<p>")
+           for (j=5; j>=i; j--) {
+               document.write(" * ");
+
+           }
+           document.write("<br>");
+       }
+       document.write("</p>");
+
+       document.write("<table border ='1'>");
+        var count = 25;
+        for(var i=1; i<=5; i++){
+            document.write("<tr>")
+            for(j=1; j<=5; j++){
+                document.write("<td>"+count+"</td>")
+                count--;
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+    
+</body>
+</html>

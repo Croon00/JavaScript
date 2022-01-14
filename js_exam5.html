@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <h1>조건문</h1>
+    <script>
+        // if 조건문
+        /*
+        if(조건){
+            명령문1
+        }
+        명령문2
+        */
+        //false 인 경우 : false, 0, underfined, '', null,""
+        // true 인 경우 : ture, 0 제외 나머지, '공백포함문자열'
+
+
+       var data1 =false;
+       if (data1) {
+           console.log("명령문1 실행 완료");
+       }
+       console.log("명령문2 실행 완료");
+       
+       // 입력값이 홍길동이면 "환형합니다" 메시지 출력
+       // 변수에 입력값을 저장한다.
+       // 변수값이 홍길동이면 메시지를 출력한다
+
+    //    var userName = (prompt("이름을 입력하시오:"));
+
+    //    if (userName == "홍길동"){
+    //        console.log("당신은 홍길동이 맞다.");
+    //    }
+
+       // 퀴즈 : 첫번째 값이 50보다 크고 두번째 값이 홍길동이면 메세지를 출력한다.
+    //    var score = Number(prompt("값을 입력하시오:"));
+    //    var userName = (prompt("이름을 입력하시오:"));
+
+    //    if ( (score > 50)&&(userName ="홍길동")){
+    //        console.log("합격입니다.");
+    //    }
+    //    else{
+    //        console.log("불합격입니다.");
+    //    }
+
+    var num = 100;
+    if (num>0) {
+        console.log(num, "양수이다.");
+    }
+    else{
+        console.log(num, "양수가 아니다.");
+    }
+    console.log("if~else 테스트 종료");
+
+    //  짝수이다. 홀수이다. 메세지 출력
+    //  숫자%2 == 0 짝수
+    //  그렇지 않다면 홀수
+    console.log("==============")
+    var data = Number(prompt("숫자를 입력하시오. "))
+    if (data%2 == 0) {
+        console.log(data, "짝수");
+    }
+    else {
+        console.log(data, "홀수");
+    }
+    </script>
+
+    
+    
+</body>
+</html>

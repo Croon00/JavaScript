@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <h1>연산자</h1>
+    <script>
+        //산술 연산자
+        //연산자 대상은 수치형 데이터(실수, 정수)
+        var n1 = 100, n2 = 3;
+        console.log(n1,'+', n2, '=', n1+n2);
+        console.log(n1,'-', n2, '=', n1-n2);
+        console.log(n1,'/', n2, '=', n1/n2);
+        console.log(n1,'%', n2, '=', n1%n2);
+        console.log(n1,'*', n2, '=', n1*n2);
+        console.log(n1,'**', n2, '=', n1**n2);
+
+        console.log("\n\n");
+
+        // 증감연산자
+        // ++변수, 변수++, --변수, 변수--
+        var num = 50;
+        console.log('num : ', num);
+        console.log('num : ', ++num);
+        console.log('num : ', num++);
+        console.log('num : ', --num);
+        console.log('num : ', num--);
+        console.log('num : ', num);
+
+        var n = 50;
+        console.log('===============');
+        console.log('n :', n);
+        n = n + 1;
+        console.log('n = ', n)
+        n -= 20;
+        console.log('n = ', n)
+        n *= 3;
+        console.log('n = ', n)
+        n /= 5;
+        console.log('n = ', n)
+        
+        // 문자열 연산자 + (연결 연산자)
+        var s1 = "Hello", s2 = "JAVA";
+        console.log(s1+s2); // HelloJava
+        console.log(s1-s2);
+        console.log("\n\n");
+
+        var num1 = 100;
+        var num2 = 30;
+        var num3 = 30;
+        var st = "30";
+        console.log(num1 >= num2);
+        console.log(num1 <= num2);
+        console.log(num1 == num2);
+        console.log(num1 != num2);
+        console.log(num1 === num2);
+        console.log("===========");
+        console.log(num2 == st); //==의 경우 자료형은 보지 않고 값만을 본다.
+        console.log(num2 === st); //==의 경우 자료형은 보지 않고 값만을 본다.
+
+        console.log("===========");
+
+        var b1 = true;
+        var b2 = false;
+        console.log(b1, !b1);
+        console.log(b1 || b2);
+        console.log(b1 && b2);
+        console.log(b2, !b2);
+        
+        // 두개의 변수를 정의한 후 값이 모두 양수이면 true 출력 그렇지 않으면 false
+
+        // var num00 = Number(prompt("정수 하나를 입력하시오:"));
+        // var num01 = Number(prompt("정수 하나를 입력하시오:"));
+
+        // console.log(num00 > 0 );
+        // console.log(num01 > 0 );
+        // console.log(num00 > 0 && num01 > 0);
+
+        // console.log("===========");
+
+
+        // var num03 = Number(prompt("정수 하나를 입력하시오:"));
+        // var num04 = Number(prompt("정수 하나를 입력하시오:"));
+        // var num05 = Number(prompt("정수 하나를 입력하시오:"));
+
+        // console.log(num03 > 0 || num04 > 0 || num05 > 0);
+
+       // 조건연산자 = 삼항연산자
+       // 조건? 명령1:명령2
+       // 조건이 true 이면 명령1
+       // 조건이 false 이면 명령2
+
+        // true? alert("참이다"):alert("거짓이다");
+        false? alert("참이다"):alert("거짓이다");
+
+        // 입력받은 나이에 따라서 성인 또는 미성년자 출력한다.
+        
+        var age0 = Number(prompt("나이를 입력하시오:"));
+        age0>20? console.log("성인"):console.log("미성년자");
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

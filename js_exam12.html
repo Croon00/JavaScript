@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>함수</h1>
+    <script>
+        // 매개변수 x, return x
+        function helloworld(){
+            for (var i=0; i<5; i++){
+                console.log(i, "Hello world");
+            }
+        }
+        // 함수 호출
+        helloworld();
+
+        function helloworld2(n){
+            for (var i=0; i<n; i++){
+                console.log("===================");
+                console.log(i+1, "Hello world");
+            }
+        }
+        helloworld2(3);
+        helloworld2(10);
+        // 두수의 사칙연산 결과를 출력하는 함수 정의
+
+        function cal(x, y){
+            document.write("<hr><p>");
+            document.write(x + " + ", + y + " = " + (x+y) + "<br>");
+            document.write(x + " - ", + y + " = " + (x-y) + "<br>");
+            document.write(x + " / ", + y + " = " + (x/y).toFixed(2) + "<br>");
+            document.write(x + " * ", + y + " = " + (x*y) + "<br>");
+            document.write("</p>");
+
+        }
+        cal(2,3);
+
+        // 매개변수 X, return 0 함수 정의
+        // 1~100까지의 누적합을 출력하는 함수
+        function sum100() {
+            var result = 0;
+            for (var i=1; i<101; i++){
+                result += i;
+            }
+            return result;
+        }
+        console.log("1~100까지의 누적합은?", sum100());
+        document.write("<h3>1~100까지의 누적합은?" + sum100() + "</h3>");
+
+        function sumN(n) {
+            var result = 0;
+            for (var i=1; i<=n; i++){
+                result += i;
+            }
+            return result;
+        }
+        console.log("1~1000까지의 누적합은?",sumN(1000));
+        document.write("<h3>1~50까지의 누적합은?" + sumN(50) + "</h3>");
+        
+        // arguments = > 가변매개변수로 삽입된 데이터를 배열로 생성
+        
+        // 매개변수를 세로로 출력하는 함수 정의
+        function printData() {
+            console.log(arguments);
+            console.log(arguments.length);
+            if(arguments.length){
+            for (var idx in arguments) {
+                console.log(idx+1, " => ", arguments[idx]);
+            }
+        }
+            else{
+                console.log("자료없음")
+
+            }
+            
+            console.log("=================")
+        }
+        printData(12, 34, 100);
+        printData();
+        printData('라면','떡볶이','짜장면','치킨','피자');
+        
+        // 매개변수의 모든 곱을 반환하는 함수 정의
+        // 매개변수의 갯수는 정해지지 않음
+        // 매개변수가 없는 경우에는 1을 반환한다.
+        function multy_all() {
+            var result = 1;
+            if (arguments.length) {
+                for (var i=0; i<arguments.length; i++) {
+                    result *= arguments[i];
+                }
+                return result;
+            }
+            else {
+                return result;
+            }
+        }
+        console.log('함수 호출 =>', multy_all());
+        console.log('함수 호출 =>', multy_all(1,2,3));
+        console.log('함수 호출 =>', multy_all(1,2,3,4,5,10));
+
+        // 퀴즈 : 매개변수로 삽입되는 과목의 총점, 평균, 
+        function exam_score(){
+            var result = 0; 
+            var avg = 0;
+            if(arguments.length){
+                for(var i=0; i<arguments.length; i++){
+                    result += arguments[i];
+                    console.log("과목",i,arguments[i]);
+                    
+                }
+                avg = result/arguments.length;
+                console.log("총점 :", result);
+                console.log("평균 : ", avg);
+                if(avg >=70){
+                    console.log("합격입니다.");
+                }
+                else{
+                    console.log("탈락입니다.");
+                }
+            }
+            else{
+                console.log("과목 미응시");
+            }
+        }
+        exam_score(70,80,70,78,50,90,100);
+        
+        // 무명함수
+        /*
+        var 함수변수 = function(매개변수){
+            변수 => 지역변수
+            명령문
+            return 결과값;
+        }
+        */
+        // 익명함수호출
+        // 익명함수변수(매개변수);
+
+        // 매개변수 X, return X
+        // n에 대한 구구단 출력
+        // n에 대한 입력받은 숫자값
+
+        var gugu = function() {
+            var n = Number(prompt("숫자 입력..."));
+            document.write("<ul>");
+            for (var i=1; i<=9; i++){
+                document.write("<li>" + n + " X " + i + " = " + (n*i) + "</li>");
+            }
+            document.write("</ul>");
+        }
+        gugu();
+
+        // 매개변수 O return O
+        // 반지름을 매개변수로 지정한 후 원의 넓이를 구하는 익명함수
+
+        var circleArea = function(radius) {
+                            return radius*radius*3.14;
+                        };
+        
+        document.write("원의 넓이는 ?" + circleArea(5));
+        document.write("원의 넓이는 ?" + circleArea(10));
+        
+        
+
+        
+
+
+    </script>
+    
+</body>
+</html>

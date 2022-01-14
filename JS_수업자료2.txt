@@ -1,0 +1,228 @@
+
+------------------
+     String 객체 
+------------------
+
+
+// 문자열을 관리할 수 있는 기능을 가지고 있는 객체
+// 문자열에 대한 다양한 작업을 할 수 있다.
+// JavaScript에서는 “ “ 나 ‘ ‘ 로 묶은 모든 문자열은 String 객체에 해당한다.
+// String 객체생성 
+// var 변수 = 인용부호를이용한문자열값;
+// var 객체변수 = new String(인용부호를이용한문자열값); => 배열 
+
+var message1 = "가나다라마바사";
+var message2 = new String("abcdefg");
+// 데이터형 표시 
+console.log(message1, typeof(message1)); // 가나다라마바사 string
+console.log(message2, typeof(message2)); 
+// String {"abcdefg"} 
+// 0: "a"1: "b"2: "c"3: "d"4: "e"5: "f"6: "g"
+// "abcdefg" "object"
+
+
+// 전체길이 출력: 변수.length
+console.log(message1, '전체길이는?', message1.length);  
+console.log(message2, '전체길이는?', message2.length);  
+// 가나다라마바사 전체길이는? 7
+// String {"abcdefg"} "전체길이는?" 7
+
+// 배열처럼 인덱싱하기 
+// 문자열변수[숫자]: 0~
+console.log(message1, '첫번째글자?', message1[0]);  
+console.log(message2, '첫번째글자?', message2[0]); 
+// 가나다라마바사 첫번째글자? 가
+// String {"abcdefg"} "첫번째글자?" "a"
+
+// 마지막글자 : 문자열변수[문자열변수.length - 1]
+console.log(message1, '마지막 글자?', message1[ message1.length - 1 ]);  
+console.log(message2, '마지막 글자?', message2[ message2.length - 1 ]);
+// 가나다라마바사 마지막 글자? 사
+// String {"abcdefg"} "마지막 글자?" "g"
+
+// 문자열을 세로로 출력하기 
+
+
+// 짝수번째 위치의 글자만 출력하기 
+
+// 홀수번째 글자 찍기
+
+
+// 역순으로 글자찍기 
+
+
+// 역순으로 글자찍기 
+
+
+
+// 문자열 꾸미기 메소드 이용하기 
+// 메소드 체이닝 방식 
+// 문자열변수.메소드명1().메소드명2()
+
+// bold() : 진하게 
+// strike() : 취소선  
+// italics() : 기울임글꼴
+// fontsize(숫자) : 글자 크기 
+// fontcolor(색상값) : 글자색상변경
+// sup() / sub() : 윗첨자, 아래첨자 
+// toLocaleUpperCase() / .toLocaleLowerCase() 
+// : 모두 대문자, 모두 소문자로 변경
+
+
+
+// 문자열 위치와 관련된 메소드 
+// lastIndexOf(문자) : 특정 문자의 첫번째 인덱스값. 
+//              중복글자인 경우에는 마지막 글자의 첫번째 인덱스 => 숫자
+// indexOf(문자)  : 특정 문자의 마지막 인덱스값  => 숫자
+//              중복글자인 경우에는 처음나온 글자의 첫번째 인덱스 => 숫자
+// charAt(인덱스번호) : 인덱스번호에 해당하는 문자값 
+
+
+// 문자열 일부 추출과 관련된 메소드 
+// substr(index,count): 글자위치로부터 갯수로 반환
+// substring(start,end): 글자 첫위치로부터 end-1 위치까지 반환
+// slice(start,end): 글자 첫 위치로부터 end-1 위치까지 반환
+
+
+//  문자열 교체와 관련된 메소드 
+//    replace(문자열1, 문자열2)   : 문자열1을 문자열2로 교체 
+//  문자열 분리와 관련된 메소드 
+//     split(' ') : 공백을 기준으로 문자열 분리 => 배열 객체 
+//               단어별로 분리, 배열객체 
+
+// 공백을 기준으로 문자열분리 => 배열구조 
+
+
+
+---------------------------
+     Number 객체 
+---------------------------
+
+    // Number 객체 만들기 
+    // Number(문자열숫자) => 숫자
+    // Number(문자열) => NaN
+    // parseInt(문자열숫자 또는 숫자) => 정수 
+    // parseFloat(문자열숫자 또는 숫자) => 실수 
+
+
+    console.log(Number('123'));  // 123
+    console.log(Number('123') === 123);  // true
+    console.log(Number("unicorn"));  // NaN
+    console.log(typeof(Number('123')));  // number
+    console.log(parseInt('123'));  // 123
+    console.log(parseInt('js'));  // NaN
+    console.log(parseInt(123.456));  // 123
+    console.log(parseFloat('123.567'));  // 123.567
+    console.log(parseFloat('js'));  // NaN
+    console.log(parseFloat(178));  // 178
+    console.log(typeof(parseFloat(178)));  // number
+
+
+
+    // Number 객체의 최대값과 최소값 속성 
+    // Number.MIN_VALUE : 최소값
+    // Number.MAX_VALUE : 최대값 
+    console.log(Number.MIN_VALUE);
+    console.log(Number.MAX_VALUE);
+
+    // Number 객체의 메서드 
+    // Number.isNaN(리터럴이나 변수) : NaN인가? => true/false
+    // Number.isFinite(리터럴이나 변수) : 유효 숫자인가? => true/false
+    // Number.NaN : Not a Number
+
+
+    var x = 'Yes';
+    var y = 200;
+    var z = Number.NaN;
+
+    console.log(Number.isNaN(x)); // false
+    console.log(Number.isNaN(y)); // true
+    console.log(Number.isNaN(z)); // true
+    console.log(Number.isFinite(x)); // false
+    console.log(Number.isFinite(y)); // true
+    console.log(Number.isFinite(z)); // false
+
+
+
+---------------------------
+        Math 객체 
+---------------------------
+
+
+    // 수학에 관련된 다양한 기능을 제공하는 객체이다
+    // Math.max(값1,값2..) => 최댓값 추출
+    // Math.min(값1,값2..) => 최솟값 추출
+    // Math.round(값/수식) => 반올림
+    // Math.floor(값/수식) => 내림
+    // Math.ceil(값/수식) => 올림
+    // Math.random(값/수식) => 0~1 사이의 난수 발생 
+    // Math.abs(값/수식) => 양수값 반환 
+    // Math.PI =>  원주율 표시 
+
+    console.log('원주율 => ', Math.PI);
+    console.log('100, 45, -90, 1 최댓값 => ', Math.max(100, 45, -90, 1));
+    console.log('100, 45, -90, 1 최솟값 => ', Math.min(100, 45, -90, 1));
+    // 원주율 =>  3.141592653589793
+    // 23 100, 45, -90, 1 최댓값 =>  100
+    // 24 100, 45, -90, 1 최솟값 =>  -90
+
+    console.log(Math.PI, ' => ', Math.round(Math.PI)); // 3
+    console.log(Math.PI, ' => ', Math.ceil(Math.PI));  // 4
+    console.log(Math.PI, ' => ', Math.floor(Math.PI)); // 3
+    
+   
+
+    // 특정범위의 랜덤값 출력 
+    console.log(Math.random()); // 0.7838863353010863
+    console.log(Number(Math.random() * 100)); // 0~100 사이인데 실수형태 
+    // 1~100 사이의 정수를 난수로 표시
+    // parseInt(숫자값) => 정수데이타형 
+    console.log(parseInt(56.567)); // 56
+    console.log(parseInt(Math.random() * 100));
+   
+
+
+---------------------------
+       Date 객체 
+---------------------------
+
+    // Date 객체의 인스턴스화 
+    // var 날짜변수 = new Date()
+    // 작업컴퓨터의 시스템 시간 기준. 객체 인스턴스화 
+    var now = new Date();
+    console.log(now, typeof (now));
+    // Sun Jan 12 2020 13:36:56   "object"
+
+    // 메소드 적용 
+    // 문자열 변경 날짜 메소드 
+    // toDateString() : 영문명요일 영문명월 날짜 년도, 문자열로변경 
+    // toLocaleDateString() : 년도 월 일, 
+    // toTimeString() : 24기준시간표시 
+    // toLocaleTimeString() : 오전/오후 시:분:초 
+    console.log('-'.replace(30));
+    console.log(now); // Sun Jan 12 2020 13:42:15 GMT+0900 (한국 표준시)
+    console.log('toDateString() => ', now.toDateString(),
+      typeof (now.toDateString()));
+    // Sun Jan 12 2020  // string
+    console.log('toLocaleDateString() => ', now.toLocaleDateString(),
+      typeof (now.toLocaleDateString()));
+    // 2020. 1. 12. // string
+    console.log('toTimeString() => ', now.toTimeString());
+    // 13:46:19 GMT+0900 (한국 표준시)
+    console.log('toLocaleTimeString() => ', now.toLocaleTimeString());
+    // 오후 1:46:19
+
+
+    // 오늘 날짜를 기준으로 해서 년도 월 일을 세로로 출력 
+   
+
+
+    // 년도, 월, 일, 시, 분, 초 를 분리 출력하는 메소드 
+    // getFullYear() 
+    // getMonth() : 0~11 출력 
+    // getDate()
+    // getDay() : 0(일요일)~6(토요일) 출력 
+    // getHours()
+
+  
+    // 오늘날짜를 기준으로 요일 출력 (일요일 ~ 토요일 )

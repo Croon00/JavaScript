@@ -1,0 +1,1668 @@
+﻿[ JavaScript 소개 ]
+
+1995년 Netscape 2.0에서 LiveScript라는 이름으로 발표되었다.
+이후 웹 개발 분야에서 Java 언어가 크게 성공하자 이름을 JavaScript로 변경하였다.
+현재 모든 웹 브라우저에서 채택하고 지원하고 있다.  
+
+[ JavaScript 특징 ]
+- JavaScript는 굉장히 가벼운 프로그래밍 언어이다.
+웹 애플리케이션 개발 시 많이 사용하며 클라이언트 프로그래밍을 위해 사용한다.
+- 객체 지향 프로그래밍 언어이다.
+- 국제 표준 규격을 가지고 있다. ES5, ES6…
+
+
+객체 지향 프로그래밍(Object-Oriented Programming, OOP) 
+: 객체 지향 프로그래밍은 컴퓨터 프로그램을 명령어의 목록으로 보는 시각에서 벗어나 
+여러 개의 독립된 단위, 즉 "객체"들의 모임으로 파악하고자 하는 것이다. 
+각각의 객체는 메시지를 주고받고, 데이터를 처리할 수 있다.
+
+
+ECMA스크립트
+: Ecma International이 ECMA-262 기술 규격에 따라 정의하고 있는 표준화된 스크립트 프로그래밍 언어를 말한다. 
+자바스크립트를 표준화하기 위해 만들어졌다. 
+ES5, ES6 …
+
+
+[사용자 측면에서의 JavaScript]
+
+브라우저가 해석하고 실행하는 코드가 HTML 문서에 포함된다.
+웹 페이지가 정적인 경우에는 필요하지 않으나 사용자와 상호 작용을 하고 변화가 이루어질 경우 JavaScript로 작성한다.
+웹 브라우저에서 발생되는 각종 이벤트나 입력 데이터에 대한 처리 등 클라이언트에서 이루어지는 다양한 작업들을 처리 할 수 있다.
+
+ 메인화면에서 마우스를 올리면 광고 위 동영상 재생
+ 최신 뉴스 제목 자동으로 스크롤
+ 실시간 인기 검색어 자동 스크롤
+ 쇼핑, 뉴스스탠드등을 클릭하면 현재화면은 유지하면서 해당 콘텐츠의 페이지 섹션의 페이지만 변경
+
+
+
+[ 웹 표준]
+html - 내용 
+CSS - 디자인
+JS - 동작
+
+
+
+[ 서버 측면에서의 JavaScript ]
+
+JavaScript는 웹 브라우저에서 동작하는 클라이언트 측 프로그래밍 언어로 사용되어 왔다.
+최근에는 다양한 분야에서 JavaScript 언어를 활용하려고 하고 있다.
+Node.js 같은 프로그래밍 분야를 활용하면 JavaScript를 통해 서버 애플리케이션을 개발 할 수 있다.
+
+----------------------------
+[  기본 문법  ]
+----------------------------
+// 세미콜론
+JavaScript는 문장의 마지막에 세미콜론( ; )을 찍어 라인이 끝났다는걸 명시한다.
+하지만 세미콜론은 필수는 아니다.
+여러 라인의 코드를 한 번에 작성할 경우에는 세미 콜론을 반드시 붙혀줘야 한다.
+
+
+// 대소문자
+JavaScript는 대소문자를 엄격하게 구분한다.
+소문자로 만들어진 요소를 대문자로 작성하면 오류가 발생한다.
+
+
+
+----------------------------
+[  주석  ]
+----------------------------
+// html 주석 
+<!-- 주석 -->
+
+// js 주석 
+// 한줄주석
+/*
+여러줄 주석 
+*/
+
+
+// JS 명령문 구조 
+명령문;
+
+----------------------------
+[  Javasctipt 위치에 따른 분류 ]
+----------------------------
+
+- inline Script
+   html의 head, body 에 삽입 
+- Internal Script
+ script 태그안에 js 명령어 삽입 
+- external : js 파일 연결
+
+
+
+<!-- inline 방식 : html 태그안에 삽입 -->
+<button onclick="alert('Hello World');console.log('Hello World');">Click Here</button>
+
+<!-- internal 방식 -->
+<script>
+    alert("Hello Javascript");
+    console.log("Hello Javascript");
+</script>
+
+
+<!-- external 방식 -->
+<script src="test.js"></script>
+
+
+// test.js
+alert("Hello JQuery");
+console.log("Hello JQuery");
+
+
+
+
+
+----------------------------
+[  출력문  ]
+----------------------------
+// 출력문의 종류 
+alert()
+  : 웹 브라우저에 경고창을 띄우는 함수
+
+console.log()
+   : 콘솔창 보기 - 개발자모드 (ctrl+shift+I)
+   : 웹 브라우저에서 제공하는 콘솔에 출력하는 함수
+
+document.write()
+ : 브라우저 화면 
+ : 지정한 문자열을 HTML 코드로 출력하는 함수
+
+innerHTML()
+  : 브라우저 화면 
+  : div 와 같이 내부에 HTML 코드를 넣을 수 있는 태그에
+    HTML 코드를 삽입하는 방식
+  
+  <!-- 1단계 : html 태그에 아이디 지정하기  -->
+  <div id="resultBox"></div>
+  <!-- 2단계:script 태그안에서 DOM 방식과 innerHTML() 이용 -->
+  document.getElementById("resultBox").innerHTML="<h1>Good Morning</h1>";
+
+
+
+
+
+----------------------------
+[  변수와 자료형  ]
+----------------------------
+
+// 기본 데이터형 
+String 문자열 : ', " 따움표 이용 
+Number 숫자 : 정수, 실수 
+Boolean 참거짓 : true, false 
+
+
+// 변수란?
+Variable 
+var 변수명;  // 변수선언
+var 변수명 = 값 // 초기화 
+
+
+// 변수명의 규칙 
+- 첫글자는 영문알파벳문자로 시작 
+- 공백 제외. 특수기호는 _, $ 만 가능
+- 예약어 제외 
+  예) if, for, var ...
+
+// 변수명 정의 권장 방식 
+- 의미가 있어야 한다. 
+- 스네이크방식 (_활용)
+  circle_radius		
+- 카멜방식 (뒷단어의 첫글자를 대문자) 
+  circleRadius
+
+
+// undefined
+- 변수를 선언하고 값을 대입하지 않으면 undefined 값이 자동으로 대입된다.
+
+
+// 예제 )  variable.html
+ // 변수 선언 1
+var userAge;
+console.log('userAge 변수값');
+console.log(userAge); // undefined
+userAge = 100;
+console.log(userAge); // 100
+
+// 변수 선언2 : 초기값과 함께 정의 
+var userName = "홍길동";
+console.log('userName =',userName);
+
+// 변수 선언3 : 2개 이상의 변수를 함께 정의 
+// 쉼표(,) 이용
+// var num1=100;
+// var num2=200;
+var num1=100, num2=200;
+document.write('<br />num1 =', num1);
+document.write('<br />num2 =', num2);
+
+
+
+
+// Escape 문자 
+\n, 줄바꿈
+\t, 공백 
+\'   홑따움표 출력
+\"  쌍따움표 출력
+\/  / 출력
+
+
+console.log('안\n녕');
+console.log('안\t\t녕');
+console.log('\"안녕\"'); // "안녕"
+console.log('\\안녕\\'); // \안녕\
+
+
+// typeof(변수나 값) = 자료형 표시 
+
+
+    var a = 'abcd', b = 100, c = true, d = false;
+    console.log('a=', a, '자료형은?', typeof (a));
+    console.log('b=', b, '자료형은?', typeof (b));
+    console.log('c=', c, '자료형은?', typeof (c));
+    console.log('d=', d, '자료형은?', typeof (d));
+
+
+
+----------------------------
+[  캐스팅  ]
+----------------------------
+- 데이터형식을 변경한다. 
+  String -> Number 
+  Number -> String 
+- 강제 형변환 
+   Number(), Boolean(), String()
+- 자동 형변환 
+  숫자+문자 -> 문자 
+  숫자(*/%)문자 -> 숫자  
+
+
+    // 자동형변환이란? 
+    // 숫자형 + 문자형 => 문자형 
+    // 숫자형 -,*,/ 문자형 => 숫자형 
+
+    var aa = 100;
+    var bb = '50';
+    console.log('aa + bb = ', aa + bb); // aa + bb =  10050
+    console.log('aa - bb = ', aa - bb); // aa - bb =  50
+    console.log('aa * bb = ', aa * bb); // aa * bb =  5000
+
+// 강제적 형변환 
+//String(변수) : 문자열 데이터로 변경 
+//Number(변수) : 숫자형 데이터로 변경 
+var inData = prompt('숫자를 입력하세요...');
+console.log('inData = ',inData);
+console.log('inData 자료형은? ', typeof(inData));
+inData = Number(inData);
+console.log('inData = ',inData);
+console.log('inData 자료형은? ', typeof(inData));
+    /*
+    inData =  45
+    inData 자료형은?  string
+    inData =  45
+    inData 자료형은?  number
+    */
+
+
+----------------------------
+[  연산자  ]
+----------------------------
+
+// 연산자 
+- 산술연산자, 비교연산자, 논리연산자, 문자열연산자
+- 대입연산자, 조건연산자
+  
+
+// +, -, *, /, %(나머지연산자), ** 
+var x=70, y=6;
+console.log(x, '+', y, '=', x+y);
+console.log(x, '*', y, '=', x*y);
+console.log(x, '/', y, '=', x/y);
+console.log(x, '%', y, '=', x%y);
+console.log(x, '**', y, '=', x**y);
+/*
+70 "+" 6 "=" 76
+70 "*" 6 "=" 420
+70 "/" 6 "=" 11.666666666666666
+70 "%" 6 "=" 4
+70 "**" 6 "=" 117649000000
+*/
+
+// 증감(전위, 후위 연산자) : 숫자형변수에 사용
+// ++변수, 변수++, --변수, 변수-- : 값이 1씩 증가하거나 1씩 감소 
+var z=0;
+console.log('z = ', z); // z =  0
+console.log('++z  ', ++z); // ++z   1
+console.log('z++  ', z++); // z++   1
+console.log('z = ', z);  // z =  2
+console.log('--z  ', --z); // --z   1
+console.log('z--  ', z--); // z--   1
+console.log('z = ', z);  // z =  0
+
+
+
+
+// 대입연산자 : 숫자형에서 사용 
+// +=, -=, *=, /=
+
+
+// 문자열 연산자 + (연결 연산자)
+var message1 = '메리', message2='크리스마스';
+console.log('message1+message2 = ' ,message1+message2);
+
+
+// Boolean 
+논리연산자와 비교연산자의 결과
+true && true = true (논리곱 &&) 비교값 모두 true
+true || false = true (논리합 ||) 비교값중 하나만이라도 true
+!true = false !(not 논리부정) 
+!false = true 
+
+// 관계(비교)연산자 
+결과값이 Boolean => true/false 
+>, <, <=, >=
+== : 값이 같다
+=== : 값과 데이터형이 같다 
+!= : 값이 서로 다르다
+!== : 값과 데이터형이 서로 다르다. 
+
+// 변수1(>/</>=/<=)변수2, 
+// ==(데이터형은 상관없이 값만 같다), !=
+// ===(데이터형도 같고 값도 같다.), !==
+
+
+
+
+// 논리연산자 => true/false
+// || : 논리의합 or , 조건 중 하나만 true이면 true
+// && : 논리의곱 and , 조건이 모두 true이어야 true
+// ! : 부정 not
+console.log('true || false = ', true || false);
+console.log('true || true = ', true || true);
+console.log('false || false = ', false || false);
+console.log('true && false = ', true && false);
+console.log('true && true = ', true && true);
+console.log('false && false = ', false && false);
+console.log('!false = ', !false );
+
+
+/*
+true || false =  true
+true || true =  true
+false || false =  false
+true && false =  false
+true && true =  true
+false && false =  false
+!false =  true
+*/
+
+
+
+// 조건연산자 ?
+- 한문장 제어문 
+- 조건? true명령문:false명령문;
+- 조건if문과 비슷
+- 조건? 명령1:명령2
+- 조건이 true 이면 명령1
+- 조건이 false 이면 명령2
+- true? alert('참'):alert('거짓'); // alert('참')
+- false? alert('참'):alert('거짓'); // alert('거짓')
+
+var l=50, m=50, n=300;
+(m>n)? console.log('m이 크다'):console.log('n이 크다');
+// n이 크다
+((l==m) && (m>n)) ?  console.log('참'):console.log('거짓');
+// 거짓
+((l==m) || (m>n)) ?  console.log('참'):console.log('거짓');
+// 참
+
+
+
+----------------------------
+[  입력문  ]
+----------------------------
+// 입력문 prompt()
+// 결과값은 문자열 string
+// var 저장변수 = prompt(메세지,초기값);
+
+// 선택상자 confirm()
+// 결과값은 boolean (true/false)
+// var 저장변수 = confirm(메세지) 
+var ans = confirm("자바스크립는 인터프리터 언어이다");
+document.write(ans? "정답":"오답");
+
+
+
+// 소숫점 처리하기 
+// Math.round(수식이나 값) => 정수 (소숫점 첫째자리에서 반올림)
+// (수식이나 값).toFixed(소숫점자리수) => 실수 
+// : 소숫점자리수+1 자리에서 반올림
+/*
+국어 = 95
+영어 = 95
+수학 = 96
+총점 = 287
+평균 = 95.66666666666667
+평균 = 96
+평균 = 95.667
+*/
+
+
+
+----------------------------
+       제어문의 종류
+----------------------------
+1) 조건문 
+   조건연산자
+   if
+   if else 
+   if elseif else
+   switch case : 다중 조건 
+   짧은문장 조건문 -  &&
+   
+
+2) 반복문  
+   while 
+   do while
+   for 
+   for .. in 
+
+----------------------------
+        if 조건문
+----------------------------
+// if 조건문
+ if (조건) {
+    명령문 }
+ 명령문
+
+// false 값인 경우 
+false , 0, undefined, '', null, ""
+
+// true 값이 경우 
+true, 0제외나머지, '공백포함문자열', " "
+
+
+// if else 
+
+if (조건식) {
+    명령문1
+} else {
+    명령문2
+}
+명령문3
+
+// 다중 if문 (조건이 여러가지인 경우)
+ if elseif else
+
+if (조건식1) {
+    명령문1
+} else if (조건식2) {
+    명령문2
+} else {
+    명령문3
+}
+
+명령문4
+
+
+
+// 변수값에 따라 명령 실행하기 
+var a = -100;
+if (a>0) {
+    console.log('a는 양수다');
+}
+console.log('실행 완료1');
+
+// false/true 값 테스트 
+// false , 0, undefined, '', null, ""
+
+
+// 입력값에 따라 명령 실행하기 
+// var 변수 = prompt(메세지)
+// 입력상자에 입력하지 않고 [확인]클릭시 false
+// var ans = prompt('숫자를 입력하세요');
+// if (ans) {
+//     alert('입력값'+ans)
+// }
+// console.log(typeof(ans)) // string
+
+// 입력받은 값이 10보다 크면 명령 실행 
+// 문자열 string =>  숫자형 
+
+
+// if ~ else 
+// if (조건식) {
+//     명령문1
+// } else {
+//     명령문2
+// }
+// 명령문3
+
+// 변수값이 100보다 크면 big, 
+// 100보다 작거나 같으면 small 출력 
+
+// 퀴즈 : 입력 숫자가 짝수인지 홀수인지에 따라 메세지 출력 
+// 숫자%2 값이 0이면 짝수, 그렇지 않다면 홀수 
+/*
+
+
+// 퀴즈 : 두개의 변수가 모두 양수이면 메세지1 출력 
+// 메세지2 출력
+
+
+
+// 다중 if문 (if else if else) 
+// 양수, 0, 음수 => 명령분기  
+var x = 0 
+if ( x>0 ) {
+    console.log('양수이다.')
+} else if ( x == 0) {
+    console.log('0이다.')
+} else {
+    console.log('음수이다.')
+}
+console.log('다중 if문 테스트 종료')
+
+
+----------------------------
+        switch case  조건문
+----------------------------
+// 예제 
+- switch.html
+
+
+
+// 수식값에 따라 명령문 분기 
+
+switch (수식/변수) {
+    case 값1: 
+        명령문1
+        break
+    case 값2: 
+        명령문2
+        break        
+    case 값3: 
+        명령문3
+        break    
+    default:
+        명령문4
+}
+명령문5
+
+// break : 제어문에서 탈출하라 
+
+// switch case 문을 이용한 짝수, 홀수, 에러 
+var n = 5;
+switch (n%2) {
+    case 0:
+        console.log('짝수');
+        break;
+    case 1:
+        console.log('홀수');
+        break; 
+    default:
+        console.log('에러')       
+}
+console.log('테스트1 끝') 
+
+// break 문이 없는 switch ... case 테스트 
+// break 문이 없다면 모든 명령문이 실행된다. 
+
+
+// 여러 case 문이 하나의 명령어가 실행되게 한다. 
+// 봄 (3~5), 여름(6~8), 가을(9~11), 겨울(12,1,2), 그외는 에러
+
+
+// 년도를 입력하면 띠가 출력된다. 
+// 태어난년도%12 = 숫자 (0~11)
+// 원숭이, 닭, 개, 돼지, 쥐, 소, 범, 토끼, 용, 뱀, 말, 양 
+
+
+
+----------------------------
+       반복문 while
+----------------------------
+// 반복문 while
+// 조건식이 만족하는 동안 명령문1을 실행하여라 
+// 조건식을 false 되는 조건을 만들어야한다.
+while(조건식) {
+    명령문1
+}
+명령문2
+
+// 스타일1
+초기값  
+while(조건식) {
+    명령문1
+    증감값
+}
+명령문2
+
+// 스타일2  
+while(true) {
+    명령문1
+    if (조건식) {
+        명령문2
+        break
+    }
+}
+명령문3
+
+
+
+
+    // 반복문 while
+    // 조건식이 만족하는 동안 명령문1을 실행하여라 
+    // 조건식을 false 되는 조건을 만들어야한다.
+    // while (조건식) {
+    //   명령문1
+    // }
+    // 명령문2
+
+    // 스타일1
+    // 초기값
+    // while (조건식) {
+    //   명령문1
+    //   증감값
+    // }
+    // 명령문2
+
+    // 스타일2  
+    // while (true) {
+    //   명령문1
+    //   if (조건식) {
+    //     명령문2
+    //     break
+    //   }
+    // }
+    // 명령문3
+
+
+    // 특정 메세지를 7번 출력한다. 
+    
+    // 퀴즈 : 1~5 숫자를 세로로 찍어라 
+
+
+
+    // 누적합구하기 1~10까지의 합 
+    // 1+2+3+...+10 = ?
+
+    
+    // 특정 숫자의 구구단 찍기 
+    
+    // 1~5까지 출력 
+   
+
+    // 퀴즈 : 입력한 값이 y 이면 메세지 출력 
+
+
+    // 1~50까지 숫자 중 3의 배수만 출력하여라 
+    
+    // continue 문을 이용하여 하단 명령 제외하기 
+
+    // 1~25까지에서 5의 배수만 출력하지 않는다.
+
+
+
+----------------------------
+       반복문 do while
+----------------------------
+// do while
+// 조건에 만족하지 않아도 명령문 1번은 실행한다. 
+
+초기치 
+do {
+    명령문1
+    증감
+} while(조건식);
+명령문2
+
+
+
+while (false) {
+      document.write('명령실행1');
+    }
+    document.write('<p>while 테스트 종료</p>')
+
+    do {
+      document.write('명령실행2');
+    } while (false);
+    document.write('<p>do while 테스트 종료</p>')
+
+    // 10~1 감소하면서 출력 
+    var n1 = 10;
+    document.write('<p>')
+    do {
+      document.write(n1 + ' ');
+      n1--; // cnt-=1
+    } while (n1 > 0);
+    document.write('</p>')
+
+    // 반복문안에 반복문 이용 
+
+    // 별 찍기 
+    /*
+    
+    결과>>
+    *
+    **
+    ***
+    ****
+    *****
+    
+    */
+   
+
+----------------------------
+       반복문 for
+----------------------------
+// 예제 
+- for.html
+
+
+for (초기치;조건;증감) {
+ 명령문 
+}
+
+예1) for(i=0;i<10;i++) {
+    명령문
+}
+
+예2) for(i=10;i>0;i--) {
+    명령문
+}
+
+// 1~10까지 출력 
+for(var i=1;i<=10;i++) {
+    console.log(i);
+}    
+console.log('for 테스트1')    
+
+// 10~1까지 출력 
+for(var i=10;i>0;i--) {
+    console.log(i);
+}    
+console.log('for 테스트2')    
+
+// 입력값에 관련된 구구단 출력하기 
+
+// for문안에 조건문 사용하기 
+// 10의 배수만 표시 (1~100)
+
+
+// for문안에 continue문 이용하기 
+// 5의 배수와 7의 배수는 출력제외. 나머지는 출력(1~100)
+
+
+// for 문안에 for 문 = 중첩 for 문 
+document.write('<p>');
+for(var i=1; i<=10; i++) {
+    document.write(i + '<br />');
+    for(var j=1; j<=5; j++){
+        document.write(j + ' ');
+    }
+    document.write('<br />')
+}
+document.write('</p>');
+
+// 구구단 (2~9단까지 출력하기)
+
+
+
+
+----------------------------
+       배열 
+----------------------------
+
+    // 자료구조 
+    // 변수(Variable) < 배열(Array) <  객체(Object)
+
+    // 배열(array) 
+    // 변수는 하나의 값만 저장 
+    // 배열은 여러가지 자료형의 값을 저장 
+
+    // 배열생성법 1
+    // []를 이용해서 빈배열을 만들고 아이템값 삽입 
+    // var 배열변수 = [];
+    // 배열변수[인덱스] = 값;
+    // 인덱스는 0부터 시작 
+    var arr1 = [];
+
+    // 배열 전체 출력 
+    console.log('arr1 = ', arr1);
+
+    // 배열값 추가 
+    arr1[0] = 'JS';
+    arr1[1] = 100;
+    console.log('arr1 = ', arr1);
+    arr1[2] = true;
+    console.log('arr1 = ', arr1);
+
+    // 인덱싱이란? 
+    // 위치값, 배열의 특정위치 접근 
+    // 배열변수[인덱스번호]
+    console.log('arr1의 첫번째 아이템값? ', arr1[0]);
+    console.log('arr1의 세번째 아이템값? ', arr1[2]);
+
+    // 배열의 전체 길이(갯수, 크기)를 표시하는 속성 
+    // 배열변수.length 
+    console.log('arr1의 전체길이는? ', arr1.length);
+
+    // 배열의 마지막 아이템의 인덱스 . length 속성 이용 
+    // 배열변수.length-1
+    arr1[3] = '홍길동';
+    console.log('arr1의 전체길이는? ', arr1.length);
+    console.log('arr1의 첫번째 아이템값? ', arr1[0]);
+    console.log('arr1의 마지막 아이템값? ', arr1[3]);
+    console.log('arr1의 마지막 아이템값? ', arr1[arr1.length - 1]);
+
+    // 배열생성법 2
+    // 배열을 생성할때 아이템값을 함께 지정
+    // var 배열변수 = [값1, 값2, 값3...];
+    var arr2 = [100, 200, 300, 400];
+    console.log('arr2 = ', arr2);
+    console.log('arr2의 전체길이는? ', arr2.length);
+    console.log('arr2의 첫번째 아이템값? ', arr2[0]);
+    console.log('arr2의 마지막 아이템값? ', arr2[arr2.length - 1]);
+    // 맨뒤에 새로운 배열요소 추가?
+    // 배열변수[배열변수.length] = 값;
+    arr2[arr2.length] = 'Jquery';
+    console.log('arr2 = ', arr2);
+
+    // 배열생성법 3
+    // new Array()를 이용해서 빈배열을 만들고 아이템값 삽입 
+    // var 배열변수 = new Array();
+    // 배열변수[인덱스] = 값;
+    // 인덱스는 0부터 시작  
+    var arr3 = new Array();
+    console.log('arr3 = ', arr3);
+    arr3[0] = '신데렐라';
+    arr3[arr3.length] = '백설공주';
+    arr3[arr3.length] = '장화홍련전';
+    console.log('arr3 = ', arr3);
+    console.log('arr3의 전체길이는? ', arr3.length);
+
+    // 배열생성법 4
+    // new Array() 로 배열생성시 초기 아이템값 함께 삽입 
+    // var 배열변수 = new Array(값1, 값2, 값3...);
+    var arr4 = new Array('트와이스', '방탄소년단');
+    console.log('arr4 = ', arr4);
+    arr4[arr4.length] = '엑소';
+    arr4[arr4.length] = '레드벨벳';
+    console.log('arr4 = ', arr4);
+
+    // 입력값을 받아서 배열 5개 만들기 
+    
+    // 1~10 까지 숫자배열만들기 (while문 이용) 
+    
+
+    // 1~50사이의 숫자중에서 짝수만 배열로 만들기 (for문 if문 이용)
+   
+
+    // for 문을 이용하여 배열 생성후 아이템 출력하기 
+   
+
+    // 배열 중에서 홀수번째만 출력하기 (for, if 문 이용)
+    var arr2 = ['이영희', '김철수', '소나영', '김민주', '최민수', '홍길동', '송은주', '신숙자'];
+    
+
+
+    // 퀴즈 : 1~100사이의 숫자중에서 3의 배수이거나 7의 배수로 된 배열 생성하기 
+    
+
+----------------------------
+       for ... in 
+----------------------------
+
+    // for ... in 
+    // 배열이 관리하는 기억장소를 처음부터 끝까지 순회할 경우 for 문을 사용한다.
+    // for in은 배열 순회를 목적으로 for문을 사용할 때 보다 편하게 사용할 수 있도록 
+    // 지원하는 개념이다.
+
+// 배열 for ...  in 문을 이용해서 배열 요소 출력하기 
+    /*
+    for (var index변수 in 배열이름) { 
+         명령문 
+    }
+    */
+    
+    // i는 인덱스번호 : 0~배열마지막인덱스번호, 데이타형은? string 문자열
+    // 실제배열값은 ? 배열변수[i]
+    var arr3 = [100, 300, 500, 1000, 10];
+    for (var i in arr3) {
+      console.log(i, typeof (i), arr3[i])
+    }
+
+    // for .. in 배열 출력 
+    // 1번 => 값1
+    // 2번 => 값2
+    // ... 
+    var arr4 = ['국어', '영어', '수학', '음악', '미술', '코딩'];
+    document.write('<p>')
+    for (var i in arr4) {
+      // i는 문자열 데이형이므로 숫자형으로 변경 
+      document.write((Number(i) + 1) + ' 번 => ' + arr4[i] + '<br />')
+    }
+    document.write('</p>')
+
+
+
+
+
+
+----------------------------
+       배열 메서드 
+----------------------------
+
+// 데이터 변경
+
+    // push(): 배열의 끝에 값을 추가.
+    // pop(): 배열 마지막 값을 제거.
+    // shift(): 배열 데이터를 왼쪽으로 하나씩 밀어 맨앞 값을 제거.
+    // splice(): 배열값을 추가하거나 제거해서 반환.
+    // reverse(): 배열을 역순으로 재배치.
+    // sort(): 배열 데이터를 정렬.
+
+
+    // 배열의 일부를 반환
+    // concat(): 두개의 배열을 합침.
+    // join(): 배열 데이터 사이에 원하는 문자열을 넣어 구분자로 사용.
+    // slice(): 배열의 일부을 지정해서 가져옴.
+
+
+
+    // 배열 아이템의 추가 1 - 한개씩 맨뒤에 추가 
+    // 배열이름[새로운인덱스번호] = 값;
+    // 배열이름[배열이름.length] = 값;
+    var arr5 = [];
+    document.write('<p>' + arr5 + '</p>');
+    arr5[arr5.length] = '포토샵';
+    arr5[arr5.length] = '일러스트레이터';
+    document.write('<p>' + arr5 + '</p>');
+
+    // 배열 아이템의 추가 2 - 맨뒤에 여러개의 아이템 추가 가능 
+    // 배열이름.push(값1, 값2...)
+    arr5.push(100, 200, 300);
+    document.write('<p>' + arr5 + '</p>');
+
+    // 배열 아이템의 추가 3 - 맨앞에 여러개의 아이템 추가 가능 
+    // 배열이름.unshift(값1, 값2...)
+    arr5.unshift('하나', '둘', '셋');
+    document.write('<p>' + arr5 + '</p>');
+
+    // 배열 아이템의 추가 4 - 특정위치에 여러개의 아이템 추가
+    // 배열이름.splice(위치, 0, 값1, 값2 ... )
+    // 4번째에 2개의 아이템 추가 
+    arr5.splice(3, 0, '국어', '영어')
+    document.write('<p>' + arr5 + '</p>');
+
+    // 배열 아이템의 추가 5 - 특정위치에 특정갯수만큼 삭제하고  아이템 추가
+    // 배열이름.splice(위치, 삭제갯수, 값1, 값2 ... )
+    // 첫번째 위치에 3개를 삭제하고 '만세' 삽입
+    arr5.splice(0, 3, '만세')
+    document.write('<p>' + arr5 + '</p>');
+
+    // 마지막위치에 2개를 삭제하고 2개를 삽입 
+    arr5.splice(arr5.length - 2, 2, '한국', '서울')
+    document.write('<p>' + arr5 + '</p>');
+
+    // 배열 아이템의 삭제 1 - 마지막요소 삭제 
+    // 배열이름.pop()
+
+    // 1~20까지 숫자로 구성된 배열 생성 
+    arr6 = [];
+    for (var i = 0; i < 20; i++) {
+      arr6[i] = i + 1;
+    }
+    document.write('<p>' + arr6 + '</p>');
+
+    // 마지막요소 삭제 
+    arr6.pop();
+    arr6.pop();
+    document.write('<p>' + arr6 + '</p>');
+
+    // 배열 아이템의 삭제 2 - 맨앞부터 요소 삭제 
+    // 배열이름.shift()
+    arr6.shift();
+    document.write('<p>' + arr6 + '</p>');
+    arr6.shift();
+    document.write('<p>' + arr6 + '</p>');
+
+    // 배열 아이템의 삭제 3 - 특정위치를 기준으로 여러개 요소 삭제 
+    // 배열이름.splice(위치, 삭제갯수 )
+    // 배열의 2번째 위치 기준으로 4개 삭제 
+    arr6.splice(1, 4);
+    document.write('<p>' + arr6 + '</p>');
+
+    // 배열 아이템의 삭제 4 
+    // - 특정위치를 기준으로 여러개 요소 삭제를 하고 값 추가 
+    // 배열이름.splice(위치, 삭제갯수, 값1, 값2...)
+    // 배열의 3번째 위치를 기준으로 3개 삭제하고 '가나다라' 삽입 
+    arr6.splice(2, 3, '가나다라');
+    document.write('<p>' + arr6 + '</p>');
+
+    // 배열의 정렬 
+    // 배열변수.sort()
+    // 배열변수.reverse()
+    // 숫자 < 알파벳대문자 < 알파벳소문자 < 한글
+
+    var arr1 = [100, 'word', 500, 10, 'spring', '봄', 1, '기차', 'JS', 'js'];
+    document.write('<p> arr1 => ' + arr1 + '</p>');
+    arr1.sort();
+    document.write('<p> sort() 적용 => ' + arr1 + '</p>');
+    arr1.reverse();
+    document.write('<p> reverse() 적용 => ' + arr1 + '</p>');
+
+    // 기존 배열에서 일부를 잘라서 새로운 배열로 생성하기 1
+    // var 배열변수2 = 배열변수1.slice(인덱스1, 인덱스2)
+    // 인덱스1 ~ (인덱스2+1) => 배열변수2
+
+    // 1~20로 구성된 숫자 배열 생성 
+    var arr2 = new Array();
+    for (var i = 0; i < 20; i++) {
+      arr2[i] = i + 1;
+    }
+    document.write('<p> arr2 => ' + arr2 + '</p>');
+    // arr2에서 일부를 복사 1~5로 구성된 새로운 배열 arr3 생성 
+    var arr3 = arr2.slice(0, 5);
+    document.write('<p> arr3 => ' + arr3 + '</p>');
+    document.write('<p> arr2 => ' + arr2 + '</p>');
+    // arr2 => 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+    // arr3 => 1,2,3,4,5
+    // arr2 => 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+    // 기존 배열에서 일부를 잘라서 새로운 배열로 생성하기 2
+    // var 배열변수2 = 배열변수1.concat(값1, 값2...)
+    // 배열변수1를 복사한 후 값1~ 아이템 추가해서 배열변수2를 생성 
+    // var 배열변수2 = 배열변수1.concat() 
+    // 배열 복사 
+    arr4 = ['구로동', '서초동'];
+    document.write('<p> arr4 => ' + arr4 + '</p>');
+    var arr5 = arr4.concat('역삼동', '이화동', '봉천동');
+    document.write('<p> arr5 => ' + arr5 + '</p>');
+    document.write('<p> arr4 => ' + arr4 + '</p>');
+    var arr6 = arr4.concat();
+    document.write('<p> arr6 => ' + arr6 + '</p>');
+
+    // 배열안에 특정값이 있는지 확인하기 1
+    // 배열변수.indexOf(값1, 값2) 
+    // 위치값이 반환. 없으면 -1
+    arr7 = ['apple', 'Banana', '구로동', '서초동', 100];
+    document.write('<p> arr7 => ' + arr7 + '</p>');
+    document.write('<p> apple 값이 있는지? ' + arr7.indexOf('apple') + '</p>'); // 0
+    document.write('<p> banana 값이 있는지? ' + arr7.indexOf('banana') + '</p>'); // -1
+    document.write('<p> Banana 값이 있는지? ' + arr7.indexOf('Banana') + '</p>'); // 1
+    document.write('<p> 신림동이 있는지? ' + arr7.indexOf('신림동') + '</p>'); // -1
+
+    // 배열안에 특정값이 있는지 확인하기 2
+    // 배열변수.includes(값) 
+    // true / false 결과값 
+    document.write('<p> arr7 => ' + arr7 + '</p>');
+    document.write('<p> Banana 값이 있는지? ' + arr7.includes('Banana') + '</p>'); 
+    document.write('<p> 신림동이 있는지? ' + arr7.includes('신림동') + '</p>'); 
+
+    var arr8 = new Array();
+    var temp;
+
+    // 배열값 중복 허용하고 5개 만들기 
+    // for(i=0; i<5; i++) {
+    //     temp = prompt('배열 값을 입력하세요? ... ');
+    //     arr8[i] = temp;
+    // }
+    // document.write('<p> arr8 => '+arr8+'</p>');
+
+    // 5개 입력받아서 배열 생성 
+    // 조건 : 중복값은 없어야 한다. 
+    // var arr9 = new Array();
+    // var temp1;
+    // var cnt = 0;
+    // // var i = -1; // 배열 인덱싱 
+    // while (cnt<5 ) {
+    //     temp1 = prompt('배열 값을 입력하세요? ... ');
+    //     if ( arr9.includes(temp1) == false ) {
+    //         arr9.push(temp1);
+    //         cnt++;
+    //     } 
+    // }
+    // document.write('<p> arr9 => '+arr9+'</p>');
+
+
+    // var arr9 = new Array();
+    // var temp1;
+    // while (true ) {
+    //     temp1 = prompt('배열 값을 입력하세요? ... ');
+    //     if ( arr9.includes(temp1) == false ) {
+    //         arr9.push(temp1);
+    //     } 
+    //     if (arr9.length == 5) {
+    //         break;
+    //     }
+    // }
+    // document.write('<p> arr9 => '+arr9+'</p>');
+
+    // 배열 구조 => 문자열 구조 1
+    // 배열변수.toString()
+
+    // 배열 구조 => 문자열 구조 2
+    // 배열변수.join(구분자)
+    // 구분자가 아이템 사이에 함께 출력된다. 
+
+    var arr10 = [1, 2, 3, 4, 5];
+    document.write('<p> arr10 => ' + arr10 + '</p>');
+    document.write('<p> arr10 데이터형 => ' + typeof (arr10) + '</p>'); // object
+    document.write('<p> 문자열로 변경1 => ' + arr10.toString() + '</p>');
+    document.write('<p> arr10 데이터형 => ' + typeof (arr10.toString()) + '</p>');
+    // string
+    document.write('<p> 문자열로 변경2 => ' + arr10.join(' / ') + '</p>');
+    // 1 / 2 / 3 / 4 / 5
+    document.write('<p> arr10 데이터형 => ' + typeof (arr10.join(' / ')) + '</p>');
+    // string
+
+
+
+------------------
+      함수 
+------------------
+
+// 함수 
+함수란? 
+코드의 집합 
+개발자가 필요할 때 동작시킬 수 있도록 만들어 놓는 코드블럭
+브라우저는 함수의 존재만 파악하고 있다가 개발자가 원할 때 
+함수 내부에 작성해 놓은 코드를 실행한다.
+
+
+함수의 목적은? 재사용, 업데이트용이
+
+// 함수의 종류 
+- 이름이있는함수 / 익명함수 
+- 매개변수가 있는 함수 / 매개변수가 없는 함수 
+- return 값이 있는 함수 / return 값이 없는 함수 
+- 가변 매개 변수 
+- 익명함수 
+
+// 이름이 있는 함수 생성 
+function 함수이름(매개변수) {
+	명령문 
+}
+
+// 이름이 있는 함수의 호출 
+함수이름(매개변수);
+
+
+// return 
+- 함수 정의 내부 
+- return 문 아래에 명령은 수행하지 않는다. 
+- 결과값 전달 
+  rerun 변수/값/명령문
+
+
+// 이름이 있는 함수 생성 
+/*
+function 함수이름(매개변수) {
+	명령문 
+    return 결과값
+}
+
+함수이름(매개변수)
+*/
+
+// 함수1
+// 매개변수 X, return X
+
+// Hello World => 10번 출력하는 함수 정의 
+function hello_world() {
+    document.write('<hr />')
+    for(var i=1; i<11; i++) {
+        document.write('<p>' + i + '번째 => Hello World </p>');
+    }
+}
+
+// 함수 호출 
+hello_world();
+hello_world();
+
+// 함수2
+// 매개변수 O, return X
+
+// 특정 슷자만큼 별을 찍어라 (매개변수 한개)
+function print_star(n) {
+    document.write('<hr />')
+    for(var i=0; i<n; i++) {
+        document.write(' * ');
+    }
+}
+print_star(10);
+print_star(30);
+
+// 3개의 숫자를 더해라 (매개변수 3개)
+function add_num(x, y, z) {
+    document.write('<hr />')
+    document.write(x + ' + ' + y + ' + ' + z +' = ' + (x+y+z) );
+}
+
+add_num(10, 20, 30); // 10 + 20 + 30 = 60
+add_num(50, 100, 9); // 50 + 100 + 9 = 159
+
+// 함수3
+// 매개변수 O, return O
+// return문의 기능 
+// - 함수 탈출. 하단 명령은 실행되지 않는다.
+// - 결과값 반환 : return 결과값/수식/변수
+
+// 1~n까지의 합의 결과를 리턴해라
+function sumN(n) {
+    var result = 0;
+    for(i=1; i<=n; i++) {
+        result += i;
+    }
+    // 결과 반환 
+    return result;
+}
+
+// alert('1~50까지의 합 ? ' + sumN(50))
+console.log('1~100까지의 합 ? ' , sumN(100))
+document.write('<p>1~1000까지의 합은? ' + sumN(1000) + '</p>');
+// return 문 테스트 
+function returnTest(userName1, userName2) {
+    document.write('<hr /> <p>' + userName1 + '님 환영합니다. </p>')
+    document.write(' <p>' + userName2 + '님 환영합니다. </p>')
+    return true;
+}
+returnTest('홍길동', '김동화');
+// 함수 탈출. 하단 명령은 실행되지 않는다.
+function returnTest2(userName1, userName2) {
+    document.write('<hr /> <p>' + userName1 + '님 환영합니다. </p>')
+    return true;
+    document.write(' <p>' + userName2 + '님 환영합니다. </p>')
+}
+returnTest2('김민준', '이준희');
+
+// 함수4
+// 가변 매개변수 : 매개변수의 갯수가 정해지지 않았다. 
+// 매개변수의 값이 arguments 배열로 생성된다. 
+/*
+function 함수이름() {
+   arguments.length : 전체매개변수길이 
+   arguments[인덱스] : 매개변수의 실제값 
+}
+*/
+
+// 일반함수에서 매개변수의 갯수가 맞지 않을때 테스트 
+function parameterTest(x, y) {
+    document.write('<hr /> x = ' + x);
+    document.write('<br /> y = ' + y);
+}
+
+// 매개변수 갯수가 맞다
+parameterTest(10, 20);
+// x = 10
+// y = 20
+
+// 매개변수의 수가 모자란 경우에는 undefined
+parameterTest(100);
+// x = 100
+// y = undefined
+
+parameterTest();
+// x = undefined
+// y = undefined
+
+// 매개변수가 넘치는 경우는 불필요한 매개변수값은 무시 
+parameterTest(500, 1000, 1500);
+// x = 500
+// y = 1000
+
+// 가변매개변수 이용1 => 매개변수를 모두 세로 출력 
+function testArg1() {
+    document.write('<hr />')
+    document.write(arguments); // [object Arguments]
+    document.write('<h2> 자료형은? ' + typeof(arguments) + '</h2>'); 
+    //object
+    // arguments[인덱스번호] 
+    for (var i=0; i<arguments.length; i++) {
+        document.write('<p>'+arguments[i]+'</p>');
+    }
+}
+
+testArg1();
+testArg1('사과', '포도');
+testArg1('자두', '수박', '사과', '포도');
+
+// 가변매개변수 이용2 => 매개변수의 값을 모두 합하여라 1
+function testArg2() {
+    var sum = 0;
+    for(var i=0; i<arguments.length; i++) {
+        sum += arguments[i];
+    }
+    return sum;
+}
+// alert(testArg2(1 , 3));
+// alert(testArg2(3, 4, 5, 10, 67));
+
+
+// 가변매개변수 이용3 => 매개변수의 값을 모두 합하여라 2
+// 매개변수1 + 매개변수2 .... = 매개변수의모든합
+function testArg3() {
+    var sum = 0;
+    document.write('<p>')
+    if (arguments.length == 0) {
+        document.write('매개변수가 없다 </p> ');
+        return true;
+    }
+    for(var i=0; i<arguments.length; i++) {
+        if ( i == 0 ) {
+            document.write(arguments[i])
+        } else {
+            document.write(' + ' + arguments[i])
+        }
+        sum += arguments[i];
+    }
+    
+    document.write(' = ' + sum  +  '</p>')
+}
+testArg3(); // 매개변수가 없다
+testArg3(3, 4, 5); // 3 + 4 + 5 = 12
+testArg3(4, 10, 40, 80, 100); // 4 + 10 + 40 + 80 + 100 = 234
+
+
+
+// 이름없는 함수(익명함수)의 정의 
+/*
+var 함수변수 = function(매개변수) {
+    변수 => 지역변수
+    명령문
+    return 결과값
+};
+*/
+
+    var printMessage = function() {
+      document.write("<p>무명함수 호출</p>");
+    };
+    printMessage();
+
+    // 이름이 없는 가변매개변수로 함수 정의.  매개변수의 모든 곱의 결과 리턴 
+    var multyAll = function() {
+        var multyResult = 1;
+        for (var i=0; i<arguments.length; i++ ){
+            multyResult *= arguments[i];
+            // 0 
+            // 1, 2 => 1*1*2
+        }
+        return multyResult;
+    };
+    document.write("<p>"+multyAll(2, 3, 4, 5)+"</p>");
+
+
+
+
+------------------
+      객체 
+------------------
+
+    // 객체란?
+    // 프로그램에서 매개체 하나에 대한 값과 기능을 관리하는 단위이며 
+    // 변수+함수, 배열 등이 속해 있는 자료구조
+
+    // 자바 스크립트는 객체를 다음 두 가지 방법으로 생성할 수 있다.
+    // 1) 리터럴을 이용한 방법
+    // 2) 생성자 함수를 이용한 방법
+
+    // - 객체의 종류 
+    //   1) 사용자정의객체 
+    //   2) 내장객체 (문자열, 스크린...)
+
+
+    // 리터럴을 이용한 객체 생성
+    // var 객체명 = {키1:값1, 키2:값2 ...}
+
+    // 자동차 객체만들기 
+    // 속성 : 브랜드, 색상, 제조사 
+    // 브랜드:브랜드명
+    var Car = { brand: '산타페', color: '회색', maker: '현대' }
+    console.log('객체 = ', Car);
+    /* 
+    Object
+    brand: "산타페"
+    color: "회색"
+    maker: "현대"
+    */
+    console.log('객체의 형태  = ', typeof (Car)); // object
+
+
+    // 생성된 객체의 각 속성 접근 (인덱싱) 
+    // 객체명['키'] =>  값
+    // 객체명.키 =>  값
+    // console.log(Car[brand]); // 오류 
+    console.log(Car['brand']); // 산타페
+    console.log(Car['color']); // 회색
+    console.log(Car.color); // 회색
+
+    // 객체 생성 방법 2 - 객체 생성후 초기값 지정 
+    // var 객체명 = new Object();
+    // 객체명[키1]=값1;
+    // 객체명[키2]=값2;
+
+    // 국가 객체 만들기 
+    var Country = new Object();
+    console.log(Country);
+    // 속성 추가 : name/flower/city
+    Country['name'] = '한국';
+    Country['flower'] = '무궁화';
+    Country['city'] = '서울';
+    console.log(Country);
+    /*
+    name: "한국"
+    flower: "무궁화"
+    city: "서울"
+    */
+    // 속성 접근 
+    console.log(Country['city']); // 서울
+    console.log(Country.city); // 서울
+
+
+
+
+    // 생성된 객체의  추가와 삭제 
+    // 객체명[키값]=값 
+    // 객체명.키값 = 값
+    // delete 객체명.키 
+    // delete 객체명['키']
+
+    var Bag = {
+      'kind': '크로스백',
+      'color': '빨강색'
+    }
+    //console.log('1. Bag 객체는?', Bag);
+    // kind: "크로스백"
+    // color: "빨강색"
+    Bag['Order'] = '대한통운';
+    Bag.price = '50000원';
+    console.log('2. Bag 객체는?', Bag);
+    // kind: "크로스백"
+    // color: "빨강색"
+    // Order: "대한통운"
+    // price: "50000원"
+
+    // 속성 삭제 
+    delete Bag['Order'];
+    delete Bag.color;
+    console.log('3. Bag 객체는?', Bag);
+    // kind: "크로스백"
+    // price: "50000원"
+
+
+    // 객체의 모든 속성 출력하기 
+    // 객체 for 명령문 
+    // for (var 키변수 in 객체명) {
+    //   객체명[키변수]를 이용한 명령문
+    // }
+
+    var Food = new Object();
+    Food['menu'] = '짜장면';
+    Food['kcal'] = '500kcal';
+    Food['price'] = '6000원';
+
+    for (var key in Food) {
+      document.write('<p>' + key + ' = ' + Food[key] + '</p>');
+    }
+    // menu = 짜장면
+    // kcal = 500kcal
+    // price = 6000원
+
+
+    // with 키워드를 이용하여 객체명 생략하기 
+    // with (객체명) {
+    //     키를 이용한 명령문 
+    // }
+
+    // Food 객체에서 속성값 출력 
+    document.write('<ul>')
+    with (Food) {
+      // 객체명 생략. 키만으로 값 호출 가능 
+      document.write('<li> 메뉴 ? ' + menu + '</li>')
+      document.write('<li> 칼로리 ? ' + kcal + '</li>')
+      document.write('<li> 가격 ? ' + price + '</li>')
+    }
+    document.write('</ul>')
+
+
+
+    // in 연산자를 이용하여 키값의 유무 확인 
+    // => true/false
+    // 키값  in 객체명 
+    console.log('where 키값이 있는가?', 'where' in Food);
+    console.log('price 키값이 있는가?', 'price' in Food);
+    // where 키값이 있는가? false
+    // price 키값이 있는가? true
+
+    // 제어문과 함께 사용. 메세지 출력 
+    document.write('<p>Food 안에  menu 키가 있는가? ');
+    // var check = 'menu' in Food;
+    var check = 'sail' in Food;
+
+    if (check) {
+      document.write('키가 있다.');
+    } else {
+      document.write('키가 없다.');
+    }
+
+
+    // 키와 값을 입력받아서 객체의 속성으로 추가하기 
+    var Cat = new Object();
+    var keyData1 = prompt('첫번째 키를 입력하세요?')
+    var valueData1 = prompt('첫번째 키의 값을 입력하세요?')
+    Cat[keyData1] = valueData1;
+    var keyData2 = prompt('두번째 키를 입력하세요?')
+    var valueData2 = prompt('두번째 키의 값을 입력하세요?')
+    Cat[keyData2] = valueData2;
+
+    for (var key in Cat) {
+      document.write('<p>' + key + ' = ' + Cat[key] + '</p>')
+    }
+
+
+
+
+------------------------
+      생성자함수 
+------------------------
+
+    // 객체 생성자 함수 정의 
+    /*
+    function 객체생성자함수명(매개변수) {    
+      // 객체속성정의 
+      var 객체명 = {
+          키1:값;
+            ...
+            }
+      return 객체명;
+    } ;
+    */
+
+    // 영화객체를 만드는 객체생성자 함수 
+    // title / kind / country => 속성 
+    function MakeMovie(title, kind, country) {
+      // 객체 정의 
+      var movie = {
+        title: title,
+        kind: kind,
+        country: country
+      };
+      // 객체 반환 
+      return movie;
+    };
+
+    // 객체생성자함수를 이용해서 인스턴스(실제객체) 생성 - 인스턴스화 
+    // var 인스턴스변수 = 객체생성자함수(매개변수값);
+    var movie1 = MakeMovie('극한직업', '코메디', '한국');
+    var movie2 = MakeMovie('겨울왕국2', '애니메이션', '미국');
+    console.log(movie1);
+    // title: "극한직업"
+    // kind: "코메디"
+    // country: "한국"
+    console.log(movie2);
+    // title: "겨울왕국2"
+    // kind: "애니메이션"
+    // country: "미국"
+
+    // 인스턴스화된객체의 속성 접근 
+    // 인스턴스변수.키 => 값 
+    // 인스턴스변수[키]  => 값 
+    // movie1 인스턴스객체 속성 출력 
+    document.write('<h2>movie1</h2>')
+    document.write('<ul>');
+    document.write('<li> 영화제목 : ' + movie1.title + '</li>');
+    document.write('<li> 종류 : ' + movie1.kind + '</li>');
+    document.write('<li> 제작국가 : ' + movie1.country + '</li>');
+    document.write('</ul>');
+
+    // movie2 인스턴스객체 속성 출력 
+    document.write('<h2>movie2</h2>')
+    document.write('<ul>');
+    document.write('<li> 영화제목 : ' + movie2['title'] + '</li>');
+    document.write('<li> 종류 : ' + movie2['kind'] + '</li>');
+    document.write('<li> 제작국가 : ' + movie2['country'] + '</li>');
+    document.write('</ul>');
+
+
+    // 객체생성자함수안에 속성과 메소드 정의 
+    /*
+    function 객체생성자함수명(매개변수) {
+       // 객체정의 
+      var 객체명 = {
+            키1:매개변수,
+             ...
+            
+        //객체메소드 정의 
+       메소드명:function() {
+            명령문 
+         },
+    
+       }; // 객체정의 끝 
+    
+      return 객체명;
+    } ;
+    */
+
+    // 반려동물 객체의 생성자함수 
+    // 속성 : 종류, 성별, 나이 
+    // 메소드 : 달린다. 잠을잔다. 먹는다. 
+
+    function MakePet(kind, gender, age) {
+
+      // 객체 생성(속성과 메소드)
+      var Pet = {
+
+        // 속성 정의 
+        kind: kind, gender: gender, age: age,
+
+        // 메소드 정의 
+        run: function () {
+          //this.키로 속성값을 전달 
+          console.log(this.kind, '가 달린다.')
+        },
+
+        dream: function (where) {
+          console.log(this.kind, '가', where, '에서 잔다.')
+        },
+
+        eat: function (food) {
+          console.log(this.kind, '가', food, '을(를) 먹는다')
+        },
+        
+      };
+
+      // 객체 반환
+      return Pet;
+    };
+
+    // 실제객체 인스턴스화 
+    var pet1 = MakePet('고양이', '여자', '4살');
+    var pet2 = MakePet('강아지', '남자', '7살');
+
+    //인스턴스변수.메소드명(매개변수)
+    pet1.run();
+    pet1.dream('쇼파');
+    pet1.eat('생선');
+    // 고양이 가 달린다.
+    // 고양이 가 쇼파 에서 잔다.
+    // 고양이 가 생선 을(를) 먹는다
+
+    pet2.run();
+    pet2.dream('문앞');
+    pet2.eat('고기');
+    // 강아지 가 달린다.
+    // 강아지 가 문앞 에서 잔다.
+    // 강아지 가 고기 을(를) 먹는다
+
+
+
+
+
+
+
+
+
+

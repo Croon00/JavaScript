@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배열 메서드</h1>
+    <script>
+        // 
+        var arr = ['하나','둘','셋']
+        console.log(arr);
+        arr[arr.length];
+
+        // 삭제
+        arr.pop();
+        console.log(arr);
+        // 마지막 요소 삭제
+        arr.shift();
+        // 첫 번째 요소 삭제
+        console.log(arr);
+        // n번째 위치 아이템 삭제
+        // splice(삭제 위치 인덱스, 갯수)
+        arr.splice(1,2);
+        console.log(arr);
+        // n 번째 위치 기준 n 개의 아이템을 삭제 n개의 아이템을 삽입
+        // splice(삭제위치 인덱스, 삭제갯수, 아이템1, 아이템2)
+        arr.splice(1,1,'사과','바나나');
+        console.log(arr);
+
+        // 정렬 :   sort(), reverse()
+        // 
+        var num_arry = [0, -90, 55, 100, -10];
+        console.log("정렬 테스트");
+        num_arry.sort();
+        console.log(num_arry);
+        num_arry.reverse();
+        console.log(num_arry);
+
+        var arr_a = ["강아지", 0, -90, "banana", -100,"&123","__abced"];
+        arr_a.sort();
+        console.log(arr_a);
+        arr_a.reverse();
+        console.log(arr_a);
+
+        // 빈배열 생성한 후 5개의 숫자 데이터를 배열에 삽입한다
+        // var num1_arry = new Array();
+        // for (i=0; i<5; i++){
+        //     num1_arry[i] = Number(prompt("숫자를 입력하시오"));
+        // }
+        // num1_arry.sort();
+        // console.log(num1_arry[0]);
+        // num1_arry.reverse();
+        // console.log(num1_arry[0]);
+        // console.log(num1_arry);
+        
+        // var max = arr_b
+
+        var city_arr = ['서울','부산','대구','전주','광주']
+        console.log(city_arr);
+        console.log(city_arr.indexOf('서울'));
+        console.log(city_arr.indexOf('대전'));
+        console.log(city_arr.includes('대전'));
+        console.log(city_arr.includes('전주'));
+        
+        // 중복값 없는 배열 생성
+        // 값을 입력받아서 배열을 생성하여라.
+        // 조건 : 중복값은 없어야하며 전체 배열의 길이는 5로 한다.
+        var num_arry1 = [];
+        // for(var i = 0; i<5, i++){
+        //     num_arry1 = prompt("값을 입력하여 주세요..."){
+                
+        //     }
+        // }
+        var cnt = 0;
+        var temp;
+        while(true) {
+                temp = prompt("값을 입력해주세요");
+                if (num_arry1.includes(temp)){
+                    console.log('...');
+                }
+                else{
+                    num_arry1[cnt] = temp;
+                    cnt++;
+                }
+                if (num_arry1.length == 4){
+                    break;
+                }
+            
+        }
+        console.log(num_arry1);
+
+        
+
+    </script>
+    
+</body>
+</html>

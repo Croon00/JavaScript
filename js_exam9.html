@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <h1>배열</h1>
+    <script>
+        var arr = [];
+        console.log(arr);
+        // 배열 값 추가
+        // 배열명[인덱스위치] = 값;
+        // // 인덱스는 0부터 시작
+        // arr[0] = 10;
+        // arr[1] = 100;
+        // arr[2] = 200;
+        // console.log(arr);
+
+        // var food_arr = ["사과","바나나","포도","오렌지"];
+        // console.log(food_arr);
+
+        // var num_arr = new Array();
+        // num_arr[0] = 100;
+        // num_arr[1] = 50;
+        // num_arr[2] = -88;
+        // console.log(num_arr,typeof(num_arr));
+
+        // // 배열 선언4
+        // // var 배열변수 = new Array(값1, 값2, 값3...);
+
+        // var singer_arr =["블랙핑크", "잇지", "BTS", "GOT7"];
+        // console.log(singer_arr,typeof(singer_arr));
+        
+        // console.log(food_arr,"총 길이 => ", food_arr.length);
+
+        // // 입력값으로 배열 생성하기
+        // // 전체 배열의 길이는 5로 한다.
+        // var city_arr = new Array();
+        // for(var i = 0; i<5; i++){
+        //     city_arr[i] = prompt("도시를 입력하시오");
+        // }
+        // console.log(city_arr, "전체 길이는 =", city_arr.length);
+        
+        // // 배열 각 구성요소를 세로로 출력하기
+        // // 배열 인덱싱이란? 배열 각각의 원소의 값을 출력
+        // // 배열이름[인덱스]
+        // for (var i=0; i<city_arr.length; i++){
+        //     console.log(i, "번째 =>", city_arr[i]);
+        // }
+
+        var arr2 =['이영희', '김철수', '손나영', '김민주', '최민수', '홍길동', '송은주', '신숙자'];
+
+        for ( var i=0; i<arr2.length; i++){
+            if(i%2 != 0){
+                console.log(i, "번째 =>",arr2[i]);
+            }
+        }
+
+        var arr3 = new Array();
+        var cnt = 0;
+        for (i=1; i<=100; i++)
+        {
+            if(i%3 == 0 || i%7 == 0){
+
+                arr3[cnt] = i;
+                cnt++;
+                // 빈배열 생성
+                // 1~100
+               
+            }
+        }
+        console.log(arr3,arr3.length)
+
+        var firstName = ["이","김","박","홍","선","최","현"];
+        // for 문을 이용해서 배열 아이템을 세로로 출력하기
+
+            // for(var i = 0; i<firstName.length; i++){
+            //     console.log(firstName[i]);
+            // }
+        
+        for (var idx in firstName) {
+            console.log(firstName[idx]);
+        }
+
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 메서드</title>
+</head>
+<body>
+    <h1>배열의 메서드</h1>
+    <script>
+        // 배열 UD
+        var arr = ["도","레","미"];
+        console.log(arr, arr.length);
+        // 배열 추가 => 맨뒤 기준
+        // 배열명[배열명.length] = 데이터;
+        arr[arr.length] = "파";
+        console.log(arr, arr.length);
+        // 배열명.push(데이터,데이터2, 데이터3...);
+        arr.push("솔","라","시");
+        console.log(arr, arr.length);
+        // 배열 추가 => 맨앞 기준
+        // 배열명.unshift(데이터1, 데이터2....);
+        arr.unshift("도솔", "라시");
+        console.log(arr, arr.length);
+        // 특정 위칭 삽입
+        // 배열명.splice(삽입위치인덱스, 0, 데이터1, 데이터2...)
+        arr.splice(1, 0,"파라도","솔라시");
+        console.log(arr, arr.length);
+
+        // 배열 선언 후 값을 입력 받아서 데이터를 추가한다.
+        var num_arr = [10, 20, 30];
+        /*
+            
+
+        */
+        var num_oo = Number(prompt("값을 입력하세요:"))
+        num_arr.unshift(num_oo);
+        console.log(num_arr);
+        var num_o1 = Number(prompt("값을 입력하세요:"))
+        num_arr.unshift(num_o1);
+        console.log(num_arr);
+        var num_o2 = Number(prompt("값을 입력하세요:"))
+        num_arr.unshift(num_o2);
+        console.log(num_arr);
+
+
+        
+        
+
+        
+    </script>
+</body>
+</html>

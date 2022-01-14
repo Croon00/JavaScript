@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S1</title>
+    <style>
+        /* CSS 영역 */
+        /*  */
+    </style>
+</head>
+<body>
+    <h1>JS1</h1>
+    <!-- JS영역 -->
+    <script>
+        //한줄 주석
+        /* 여러 줄 주석
+            출력문
+            - console.log(변수/문자열/숫자/수식...)
+         */
+         console.log("Hello world");
+         console.log(100);
+         console.log(30+90-10);
+         console.log(true);
+        //  console.log(Hello);
+        //  console.log(Hello world);
+
+        /*
+            출력문2
+            document.write(HTML태그/변수/문자열/숫자/수식 ...);
+            HTML 태그는 이용부호 이용
+        */
+       document.write("<h2>Hello Javascript</h2>");
+       document.write("okokwokokok");
+       document.write("<p>"+(10+203-123)+"</p>");
+       document.write(20+40*9);
+       // 연결 연산자 +
+       document.write("<hr><h3>"+(100+25-20)+"</h3>");
+
+       /*
+        
+        출력문3
+        window.alert(변수/문자열/숫자/수식...);
+
+       */
+        // alert("Hello world");
+        // alert(12+56-100);
+
+
+
+
+    </script>
+    
+    <!-- 결과 영역 -->
+    <div id="resultBox">결과</div>
+    <script>
+        /* 
+            출력문4 
+            document.getElementById("아이디").innerHTML="HTML태그/문자열";
+        */
+       document.getElementById("resultBox").innerHTML="<h2>Hello Javascript</h2>";
+    </script>
+
+</body>
+</html>
